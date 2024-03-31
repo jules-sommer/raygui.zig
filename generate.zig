@@ -183,11 +183,11 @@ fn writeFunctions(
         } else if (!returnTypeIsVoid) {
             try file.writeAll(try allocPrint(allocator, "var out: {s} = undefined;\n", .{func.returnType}));
         }
-        try file.writeAll(try allocPrint(allocator, "raylib.m{s}(\n", .{func.name}));
+        try file.writeAll(try allocPrint(allocator, "raygui.m{s}(\n", .{func.name}));
 
         if (!isPrimitiveOrPointer(func.returnType)) {
             if (bindings.containsStruct(stripType(func.returnType))) {
-                try file.writeAll(try allocPrint(allocator, "@as([*c]raylib.{s}, @ptrCast(&out)),\n", .{func.returnType}));
+                try file.writeAll(try allocPrint(allocator, "@as([*c]raygui.{s}, @ptrCast(&out)),\n", .{func.returnType}));
             } else if (!returnTypeIsVoid) {
                 try file.writeAll(try allocPrint(allocator, "@as([*c]{s}, @ptrCast(&out)),\n", .{func.returnType}));
             }
