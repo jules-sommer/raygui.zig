@@ -374,7 +374,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Label control, shows text",
+      "description": "Label control",
       "custom": false
     },
     {
@@ -406,7 +406,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Label button control, show true when clicked",
+      "description": "Label button control, returns true when clicked",
       "custom": false
     },
     {
@@ -426,7 +426,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Toggle Button control, returns true when active",
+      "description": "Toggle Button control",
       "custom": false
     },
     {
@@ -446,7 +446,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Toggle Group control, returns active toggle index",
+      "description": "Toggle Group control",
       "custom": false
     },
     {
@@ -466,7 +466,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Toggle Slider control, returns true when clicked",
+      "description": "Toggle Slider control",
       "custom": false
     },
     {
@@ -506,7 +506,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Combo Box control, returns selected item index",
+      "description": "Combo Box control",
       "custom": false
     },
     {
@@ -530,7 +530,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Dropdown Box control, returns selected item",
+      "description": "Dropdown Box control",
       "custom": false
     },
     {
@@ -562,7 +562,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Spinner control, returns selected value",
+      "description": "Spinner control",
       "custom": false
     },
     {
@@ -650,7 +650,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Slider control, returns selected value",
+      "description": "Slider control",
       "custom": false
     },
     {
@@ -682,7 +682,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Slider Bar control, returns selected value",
+      "description": "Slider Bar control",
       "custom": false
     },
     {
@@ -714,7 +714,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Progress Bar control, shows current progress value",
+      "description": "Progress Bar control",
       "custom": false
     },
     {
@@ -774,7 +774,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Grid control, returns mouse cell position",
+      "description": "Grid control",
       "custom": false
     },
     {
@@ -798,7 +798,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "List View control, returns selected list item index",
+      "description": "List View control",
       "custom": false
     },
     {
@@ -1010,7 +1010,7 @@
         }
       ],
       "returnType": "i32",
-      "description": "Color Panel control that returns HSV color value, used by GuiColorPickerHSV()",
+      "description": "Color Panel control that updates Hue-Saturation-Value color value, used by GuiColorPickerHSV()",
       "custom": false
     }
   ],
@@ -2635,17 +2635,17 @@
           "description": ""
         },
         {
-          "name": "ICON_220",
+          "name": "ICON_WARNING",
           "value": 220,
           "description": ""
         },
         {
-          "name": "ICON_221",
+          "name": "ICON_HELP_BOX",
           "value": 221,
           "description": ""
         },
         {
-          "name": "ICON_222",
+          "name": "ICON_INFO_BOX",
           "value": 222,
           "description": ""
         },
@@ -3297,6 +3297,13 @@
       "custom": false
     },
     {
+      "name": "RAYGUI_MIN_MOUSE_WHEEL_SPEED",
+      "typ": "i32",
+      "value": "20",
+      "description": "",
+      "custom": false
+    },
+    {
       "name": "RAYGUI_TOGGLEGROUP_MAX_ITEMS",
       "typ": "i32",
       "value": "32",
@@ -3369,7 +3376,7 @@
     {
       "name": "RAYGUI_GRID_ALPHA",
       "typ": "f32",
-      "value": "0.15",
+      "value": "1.5e-1",
       "description": "",
       "custom": false
     },

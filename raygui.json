@@ -9,19 +9,19 @@
     {
       "name": "RAYGUI_VERSION_MAJOR",
       "type": "INT",
-      "value": "4",
+      "value": 4,
       "description": ""
     },
     {
       "name": "RAYGUI_VERSION_MINOR",
       "type": "INT",
-      "value": "0",
+      "value": 0,
       "description": ""
     },
     {
       "name": "RAYGUI_VERSION_PATCH",
       "type": "INT",
-      "value": "0",
+      "value": 0,
       "description": ""
     },
     {
@@ -69,13 +69,13 @@
     {
       "name": "SCROLLBAR_LEFT_SIDE",
       "type": "INT",
-      "value": "0",
+      "value": 0,
       "description": ""
     },
     {
       "name": "SCROLLBAR_RIGHT_SIDE",
       "type": "INT",
-      "value": "1",
+      "value": 1,
       "description": ""
     },
     {
@@ -93,19 +93,19 @@
     {
       "name": "RAYGUI_ICON_SIZE",
       "type": "INT",
-      "value": "16",
+      "value": 16,
       "description": "Size of icons in pixels (squared)"
     },
     {
       "name": "RAYGUI_ICON_MAX_ICONS",
       "type": "INT",
-      "value": "256",
+      "value": 256,
       "description": "Maximum number of icons"
     },
     {
       "name": "RAYGUI_ICON_MAX_NAME_LENGTH",
       "type": "INT",
-      "value": "32",
+      "value": 32,
       "description": "Maximum length of icon name id"
     },
     {
@@ -117,181 +117,187 @@
     {
       "name": "RAYGUI_MAX_CONTROLS",
       "type": "INT",
-      "value": "16",
+      "value": 16,
       "description": "Maximum number of controls"
     },
     {
       "name": "RAYGUI_MAX_PROPS_BASE",
       "type": "INT",
-      "value": "16",
+      "value": 16,
       "description": "Maximum number of base properties"
     },
     {
       "name": "RAYGUI_MAX_PROPS_EXTENDED",
       "type": "INT",
-      "value": "8",
+      "value": 8,
       "description": "Maximum number of extended properties"
     },
     {
       "name": "KEY_RIGHT",
       "type": "INT",
-      "value": "262",
+      "value": 262,
       "description": ""
     },
     {
       "name": "KEY_LEFT",
       "type": "INT",
-      "value": "263",
+      "value": 263,
       "description": ""
     },
     {
       "name": "KEY_DOWN",
       "type": "INT",
-      "value": "264",
+      "value": 264,
       "description": ""
     },
     {
       "name": "KEY_UP",
       "type": "INT",
-      "value": "265",
+      "value": 265,
       "description": ""
     },
     {
       "name": "KEY_BACKSPACE",
       "type": "INT",
-      "value": "259",
+      "value": 259,
       "description": ""
     },
     {
       "name": "KEY_ENTER",
       "type": "INT",
-      "value": "257",
+      "value": 257,
       "description": ""
     },
     {
       "name": "MOUSE_LEFT_BUTTON",
       "type": "INT",
-      "value": "0",
+      "value": 0,
       "description": ""
     },
     {
       "name": "RAYGUI_WINDOWBOX_STATUSBAR_HEIGHT",
       "type": "INT",
-      "value": "24",
+      "value": 24,
       "description": ""
     },
     {
       "name": "RAYGUI_GROUPBOX_LINE_THICK",
       "type": "INT",
-      "value": "1",
+      "value": 1,
       "description": ""
     },
     {
       "name": "RAYGUI_LINE_MARGIN_TEXT",
       "type": "INT",
-      "value": "12",
+      "value": 12,
       "description": ""
     },
     {
       "name": "RAYGUI_LINE_TEXT_PADDING",
       "type": "INT",
-      "value": "4",
+      "value": 4,
       "description": ""
     },
     {
       "name": "RAYGUI_PANEL_BORDER_WIDTH",
       "type": "INT",
-      "value": "1",
+      "value": 1,
       "description": ""
     },
     {
       "name": "RAYGUI_TABBAR_ITEM_WIDTH",
       "type": "INT",
-      "value": "160",
+      "value": 160,
       "description": ""
     },
     {
       "name": "RAYGUI_MIN_SCROLLBAR_WIDTH",
       "type": "INT",
-      "value": "40",
+      "value": 40,
       "description": ""
     },
     {
       "name": "RAYGUI_MIN_SCROLLBAR_HEIGHT",
       "type": "INT",
-      "value": "40",
+      "value": 40,
+      "description": ""
+    },
+    {
+      "name": "RAYGUI_MIN_MOUSE_WHEEL_SPEED",
+      "type": "INT",
+      "value": 20,
       "description": ""
     },
     {
       "name": "RAYGUI_TOGGLEGROUP_MAX_ITEMS",
       "type": "INT",
-      "value": "32",
+      "value": 32,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTBOX_AUTO_CURSOR_COOLDOWN",
       "type": "INT",
-      "value": "40",
+      "value": 40,
       "description": "Frames to wait for autocursor movement"
     },
     {
       "name": "RAYGUI_TEXTBOX_AUTO_CURSOR_DELAY",
       "type": "INT",
-      "value": "1",
+      "value": 1,
       "description": "Frames delay for autocursor movement"
     },
     {
       "name": "RAYGUI_VALUEBOX_MAX_CHARS",
       "type": "INT",
-      "value": "32",
+      "value": 32,
       "description": ""
     },
     {
       "name": "RAYGUI_COLORBARALPHA_CHECKED_SIZE",
       "type": "INT",
-      "value": "10",
+      "value": 10,
       "description": ""
     },
     {
       "name": "RAYGUI_MESSAGEBOX_BUTTON_HEIGHT",
       "type": "INT",
-      "value": "24",
+      "value": 24,
       "description": ""
     },
     {
       "name": "RAYGUI_MESSAGEBOX_BUTTON_PADDING",
       "type": "INT",
-      "value": "12",
+      "value": 12,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTINPUTBOX_BUTTON_HEIGHT",
       "type": "INT",
-      "value": "24",
+      "value": 24,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTINPUTBOX_BUTTON_PADDING",
       "type": "INT",
-      "value": "12",
+      "value": 12,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTINPUTBOX_HEIGHT",
       "type": "INT",
-      "value": "26",
+      "value": 26,
       "description": ""
     },
     {
       "name": "RAYGUI_GRID_ALPHA",
       "type": "FLOAT",
-      "value": "0.15",
+      "value": 0.15,
       "description": ""
     },
     {
       "name": "MAX_LINE_BUFFER_SIZE",
       "type": "INT",
-      "value": "256",
+      "value": 256,
       "description": ""
     },
     {
@@ -303,13 +309,13 @@
     {
       "name": "ICON_TEXT_PADDING",
       "type": "INT",
-      "value": "4",
+      "value": 4,
       "description": ""
     },
     {
       "name": "RAYGUI_MAX_TEXT_LINES",
       "type": "INT",
-      "value": "128",
+      "value": 128,
       "description": ""
     },
     {
@@ -321,19 +327,19 @@
     {
       "name": "RAYGUI_TEXTSPLIT_MAX_ITEMS",
       "type": "INT",
-      "value": "128",
+      "value": 128,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTSPLIT_MAX_TEXT_SIZE",
       "type": "INT",
-      "value": "1024",
+      "value": 1024,
       "description": ""
     },
     {
       "name": "RAYGUI_TEXTFORMAT_MAX_SIZE",
       "type": "INT",
-      "value": "256",
+      "value": 256,
       "description": ""
     }
   ],
@@ -2220,17 +2226,17 @@
           "description": ""
         },
         {
-          "name": "ICON_220",
+          "name": "ICON_WARNING",
           "value": 220,
           "description": ""
         },
         {
-          "name": "ICON_221",
+          "name": "ICON_HELP_BOX",
           "value": 221,
           "description": ""
         },
         {
-          "name": "ICON_222",
+          "name": "ICON_INFO_BOX",
           "value": 222,
           "description": ""
         },
@@ -2729,7 +2735,7 @@
     },
     {
       "name": "GuiLabel",
-      "description": "Label control, shows text",
+      "description": "Label control",
       "returnType": "int",
       "params": [
         {
@@ -2759,7 +2765,7 @@
     },
     {
       "name": "GuiLabelButton",
-      "description": "Label button control, show true when clicked",
+      "description": "Label button control, returns true when clicked",
       "returnType": "int",
       "params": [
         {
@@ -2774,7 +2780,7 @@
     },
     {
       "name": "GuiToggle",
-      "description": "Toggle Button control, returns true when active",
+      "description": "Toggle Button control",
       "returnType": "int",
       "params": [
         {
@@ -2793,7 +2799,7 @@
     },
     {
       "name": "GuiToggleGroup",
-      "description": "Toggle Group control, returns active toggle index",
+      "description": "Toggle Group control",
       "returnType": "int",
       "params": [
         {
@@ -2812,7 +2818,7 @@
     },
     {
       "name": "GuiToggleSlider",
-      "description": "Toggle Slider control, returns true when clicked",
+      "description": "Toggle Slider control",
       "returnType": "int",
       "params": [
         {
@@ -2850,7 +2856,7 @@
     },
     {
       "name": "GuiComboBox",
-      "description": "Combo Box control, returns selected item index",
+      "description": "Combo Box control",
       "returnType": "int",
       "params": [
         {
@@ -2869,7 +2875,7 @@
     },
     {
       "name": "GuiDropdownBox",
-      "description": "Dropdown Box control, returns selected item",
+      "description": "Dropdown Box control",
       "returnType": "int",
       "params": [
         {
@@ -2892,7 +2898,7 @@
     },
     {
       "name": "GuiSpinner",
-      "description": "Spinner control, returns selected value",
+      "description": "Spinner control",
       "returnType": "int",
       "params": [
         {
@@ -2977,7 +2983,7 @@
     },
     {
       "name": "GuiSlider",
-      "description": "Slider control, returns selected value",
+      "description": "Slider control",
       "returnType": "int",
       "params": [
         {
@@ -3008,7 +3014,7 @@
     },
     {
       "name": "GuiSliderBar",
-      "description": "Slider Bar control, returns selected value",
+      "description": "Slider Bar control",
       "returnType": "int",
       "params": [
         {
@@ -3039,7 +3045,7 @@
     },
     {
       "name": "GuiProgressBar",
-      "description": "Progress Bar control, shows current progress value",
+      "description": "Progress Bar control",
       "returnType": "int",
       "params": [
         {
@@ -3100,7 +3106,7 @@
     },
     {
       "name": "GuiGrid",
-      "description": "Grid control, returns mouse cell position",
+      "description": "Grid control",
       "returnType": "int",
       "params": [
         {
@@ -3127,7 +3133,7 @@
     },
     {
       "name": "GuiListView",
-      "description": "List View control, returns selected list item index",
+      "description": "List View control",
       "returnType": "int",
       "params": [
         {
@@ -3334,7 +3340,7 @@
     },
     {
       "name": "GuiColorPanelHSV",
-      "description": "Color Panel control that returns HSV color value, used by GuiColorPickerHSV()",
+      "description": "Color Panel control that updates Hue-Saturation-Value color value, used by GuiColorPickerHSV()",
       "returnType": "int",
       "params": [
         {

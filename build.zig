@@ -10,7 +10,7 @@ pub fn build(b: *std.Build) !void {
     const jsons = b.step("parse", "parse raygui headers and generate raylib parser output as json");
     const raylib_parser_build = b.addExecutable(.{
         .name = "raylib_parser",
-        .root_source_file = std.build.FileSource.relative("raylib_parser.zig"),
+        .root_source_file = std.Build.LazyPath.relative("raylib_parser.zig"),
         .target = target,
         .optimize = .ReleaseFast,
     });
@@ -31,7 +31,7 @@ pub fn build(b: *std.Build) !void {
     const intermediate = b.step("intermediate", "generate intermediate representation of the results from 'zig build parse' (keep custom=true)");
     var intermediateZig = b.addRunArtifact(b.addExecutable(.{
         .name = "intermediate",
-        .root_source_file = std.build.FileSource.relative("intermediate.zig"),
+        .root_source_file = std.Build.LazyPath.relative("intermediate.zig"),
         .target = target,
     }));
     intermediate.dependOn(&intermediateZig.step);
@@ -40,7 +40,7 @@ pub fn build(b: *std.Build) !void {
     const bindings = b.step("bindings", "generate bindings in from bindings.json");
     var generateZig = b.addRunArtifact(b.addExecutable(.{
         .name = "generate",
-        .root_source_file = std.build.FileSource.relative("generate.zig"),
+        .root_source_file = std.Build.LazyPath.relative("generate.zig"),
         .target = target,
     }));
     const fmt = b.addFmt(.{ .paths = &.{generate.outputFile} });

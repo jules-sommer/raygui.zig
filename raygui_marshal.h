@@ -81,34 +81,34 @@ int mGuiTabBar(Rectangle *bounds, const char ** text, int count, int * active);
 // Scroll Panel control
 int mGuiScrollPanel(Rectangle *bounds, const char * text, Rectangle *content, Vector2 * scroll, Rectangle * view);
 
-// Label control, shows text
+// Label control
 int mGuiLabel(Rectangle *bounds, const char * text);
 
 // Button control, returns true when clicked
 int mGuiButton(Rectangle *bounds, const char * text);
 
-// Label button control, show true when clicked
+// Label button control, returns true when clicked
 int mGuiLabelButton(Rectangle *bounds, const char * text);
 
-// Toggle Button control, returns true when active
+// Toggle Button control
 int mGuiToggle(Rectangle *bounds, const char * text, bool * active);
 
-// Toggle Group control, returns active toggle index
+// Toggle Group control
 int mGuiToggleGroup(Rectangle *bounds, const char * text, int * active);
 
-// Toggle Slider control, returns true when clicked
+// Toggle Slider control
 int mGuiToggleSlider(Rectangle *bounds, const char * text, int * active);
 
 // Check Box control, returns true when active
 int mGuiCheckBox(Rectangle *bounds, const char * text, bool * checked);
 
-// Combo Box control, returns selected item index
+// Combo Box control
 int mGuiComboBox(Rectangle *bounds, const char * text, int * active);
 
-// Dropdown Box control, returns selected item
+// Dropdown Box control
 int mGuiDropdownBox(Rectangle *bounds, const char * text, int * active, bool editMode);
 
-// Spinner control, returns selected value
+// Spinner control
 int mGuiSpinner(Rectangle *bounds, const char * text, int * value, int minValue, int maxValue, bool editMode);
 
 // Value Box control, updates input text with numbers
@@ -117,13 +117,13 @@ int mGuiValueBox(Rectangle *bounds, const char * text, int * value, int minValue
 // Text Box control, updates input text
 int mGuiTextBox(Rectangle *bounds, char * text, int textSize, bool editMode);
 
-// Slider control, returns selected value
+// Slider control
 int mGuiSlider(Rectangle *bounds, const char * textLeft, const char * textRight, float * value, float minValue, float maxValue);
 
-// Slider Bar control, returns selected value
+// Slider Bar control
 int mGuiSliderBar(Rectangle *bounds, const char * textLeft, const char * textRight, float * value, float minValue, float maxValue);
 
-// Progress Bar control, shows current progress value
+// Progress Bar control
 int mGuiProgressBar(Rectangle *bounds, const char * textLeft, const char * textRight, float * value, float minValue, float maxValue);
 
 // Status Bar control, shows info text
@@ -132,10 +132,10 @@ int mGuiStatusBar(Rectangle *bounds, const char * text);
 // Dummy control for placeholders
 int mGuiDummyRec(Rectangle *bounds, const char * text);
 
-// Grid control, returns mouse cell position
+// Grid control
 int mGuiGrid(Rectangle *bounds, const char * text, float spacing, int subdivs, Vector2 * mouseCell);
 
-// List View control, returns selected list item index
+// List View control
 int mGuiListView(Rectangle *bounds, const char * text, int * scrollIndex, int * active);
 
 // List View with extended parameters
@@ -162,6 +162,6 @@ int mGuiColorBarHue(Rectangle *bounds, const char * text, float * value);
 // Color Picker control that avoids conversion to RGB on each call (multiple color controls)
 int mGuiColorPickerHSV(Rectangle *bounds, const char * text, Vector3 * colorHsv);
 
-// Color Panel control that returns HSV color value, used by GuiColorPickerHSV()
+// Color Panel control that updates Hue-Saturation-Value color value, used by GuiColorPickerHSV()
 int mGuiColorPanelHSV(Rectangle *bounds, const char * text, Vector3 * colorHsv);
 
