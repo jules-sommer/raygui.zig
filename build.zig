@@ -65,22 +65,34 @@ const sep = std.fs.path.sep_str;
 const dir_raygui = cwd ++ sep ++ "raygui/src";
 
 /// add this package to lib
-pub fn addTo(b: *std.Build, lib: *std.Build.Step.Compile, target: std.Target.Query, optimize: std.builtin.Mode) void {
-    _ = b;
-    _ = optimize;
-    _ = target;
-
+pub fn addTo(
+    b: *std.Build,
+    lib: *std.Build.Step.Compile,
+    target: std.Target.Query,
+    optimize: std.builtin.Mode,
+) void {
     if (lib.root_module.import_table.get("raylib") orelse lib.root_module.import_table.get("raylib.zig") orelse lib.root_module.import_table.get("raylib-zig")) |raylib| {
-        lib.root_module.addAnonymousImport("raygui", .{
-            .root_source_file = .{ .path = cwd ++ sep ++ "raygui.zig" },
-            .imports = &.{
-                .{ .name = "raylib", .module = raylib },
+        const rayguiLib = b.addStaticLibrary(
+            .{
+                .name = "raygui.zig",
+                .target = b.resolveTargetQuery(target),
+                .optimize = optimize,
+                .root_source_file = .{ .path = cwd ++ sep ++ "raygui.zig" },
             },
-        });
-        lib.addIncludePath(.{ .path = dir_raygui });
-        lib.addIncludePath(.{ .path = cwd });
-        lib.linkLibC();
-        lib.addCSourceFile(.{ .file = .{ .path = cwd ++ sep ++ "raygui_marshal.c" }, .flags = &.{"-DRAYGUI_IMPLEMENTATION"} });
+        );
+
+        rayguiLib.linkLibC();
+
+        for (raylib.include_dirs.items) |includedItem| {
+            rayguiLib.addIncludePath(includedItem.path);
+        }
+
+        rayguiLib.addIncludePath(.{ .path = dir_raygui });
+        rayguiLib.addIncludePath(.{ .path = cwd });
+        rayguiLib.addCSourceFile(.{ .file = .{ .path = cwd ++ sep ++ "raygui_marshal.c" }, .flags = &.{"-DRAYGUI_IMPLEMENTATION"} });
+        rayguiLib.root_module.addImport("raylib", raylib);
+
+        lib.root_module.addImport("raygui", &rayguiLib.root_module);
     } else {
         std.debug.panic("lib needs to have 'raylib', 'raylib.zig' or 'raylib-zig' as module dependency", .{});
     }
