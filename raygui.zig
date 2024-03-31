@@ -67,34 +67,34 @@ pub fn GuiDrawIconButton(bounds: raylib.Rectangle, icon: GuiIconName, iconTint: 
 
 /// Enable gui controls (global state)
 pub fn GuiEnable() void {
-    raylib.mGuiEnable();
+    raygui.mGuiEnable();
 }
 
 /// Disable gui controls (global state)
 pub fn GuiDisable() void {
-    raylib.mGuiDisable();
+    raygui.mGuiDisable();
 }
 
 /// Lock gui controls (global state)
 pub fn GuiLock() void {
-    raylib.mGuiLock();
+    raygui.mGuiLock();
 }
 
 /// Unlock gui controls (global state)
 pub fn GuiUnlock() void {
-    raylib.mGuiUnlock();
+    raygui.mGuiUnlock();
 }
 
 /// Check if gui is locked (global state)
 pub fn GuiIsLocked() bool {
-    return raylib.mGuiIsLocked();
+    return raygui.mGuiIsLocked();
 }
 
 /// Set gui controls alpha (global state), alpha goes from 0.0f to 1.0f
 pub fn GuiSetAlpha(
     alpha: f32,
 ) void {
-    raylib.mGuiSetAlpha(
+    raygui.mGuiSetAlpha(
         alpha,
     );
 }
@@ -103,7 +103,7 @@ pub fn GuiSetAlpha(
 pub fn GuiSetState(
     state: GuiState,
 ) void {
-    raylib.mGuiSetState(
+    raygui.mGuiSetState(
         @intFromEnum(state),
     );
 }
@@ -111,7 +111,7 @@ pub fn GuiSetState(
 /// Get gui state (global state)
 pub fn GuiGetState() GuiState {
     var out: GuiState = undefined;
-    raylib.mGuiGetState(
+    raygui.mGuiGetState(
         @as([*c]GuiState, @ptrCast(&out)),
     );
     return out;
@@ -121,7 +121,7 @@ pub fn GuiGetState() GuiState {
 pub fn GuiSetFont(
     font: Font,
 ) void {
-    raylib.mGuiSetFont(
+    raygui.mGuiSetFont(
         @as([*c]raygui.Font, @ptrFromInt(@intFromPtr(&font))),
     );
 }
@@ -129,8 +129,8 @@ pub fn GuiSetFont(
 /// Get gui custom font (global state)
 pub fn GuiGetFont() Font {
     var out: Font = undefined;
-    raylib.mGuiGetFont(
-        @as([*c]raylib.Font, @ptrCast(&out)),
+    raygui.mGuiGetFont(
+        @as([*c]raygui.Font, @ptrCast(&out)),
     );
     return out;
 }
@@ -141,7 +141,7 @@ pub fn GuiSetStyle(
     property: i32,
     value: i32,
 ) void {
-    raylib.mGuiSetStyle(
+    raygui.mGuiSetStyle(
         control,
         property,
         value,
@@ -153,7 +153,7 @@ pub fn GuiGetStyle(
     control: GuiControl,
     property: i32,
 ) i32 {
-    return raylib.mGuiGetStyle(
+    return raygui.mGuiGetStyle(
         @intFromEnum(control),
         property,
     );
@@ -163,31 +163,31 @@ pub fn GuiGetStyle(
 pub fn GuiLoadStyle(
     fileName: [*:0]const u8,
 ) void {
-    raylib.mGuiLoadStyle(
+    raygui.mGuiLoadStyle(
         @as([*c]const u8, @ptrFromInt(@intFromPtr(fileName))),
     );
 }
 
 /// Load style default over global style
 pub fn GuiLoadStyleDefault() void {
-    raylib.mGuiLoadStyleDefault();
+    raygui.mGuiLoadStyleDefault();
 }
 
 /// Enable gui tooltips (global state)
 pub fn GuiEnableTooltip() void {
-    raylib.mGuiEnableTooltip();
+    raygui.mGuiEnableTooltip();
 }
 
 /// Disable gui tooltips (global state)
 pub fn GuiDisableTooltip() void {
-    raylib.mGuiDisableTooltip();
+    raygui.mGuiDisableTooltip();
 }
 
 /// Set tooltip string
 pub fn GuiSetTooltip(
     tooltip: [*:0]const u8,
 ) void {
-    raylib.mGuiSetTooltip(
+    raygui.mGuiSetTooltip(
         @as([*c]const u8, @ptrFromInt(@intFromPtr(tooltip))),
     );
 }
@@ -198,7 +198,7 @@ pub fn GuiIconText(
     text: [*:0]const u8,
 ) [*:0]const u8 {
     return @as([*:0]const u8, @ptrCast(
-        raylib.mGuiIconText(
+        raygui.mGuiIconText(
             iconId,
             @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         ),
@@ -209,7 +209,7 @@ pub fn GuiIconText(
 pub fn GuiSetIconScale(
     scale: i32,
 ) void {
-    raylib.mGuiSetIconScale(
+    raygui.mGuiSetIconScale(
         scale,
     );
 }
@@ -217,7 +217,7 @@ pub fn GuiSetIconScale(
 /// Get raygui icons data pointer
 pub fn GuiGetIcons() *u32 {
     return @as(*u32, @ptrCast(
-        raylib.mGuiGetIcons(),
+        raygui.mGuiGetIcons(),
     ));
 }
 
@@ -227,7 +227,7 @@ pub fn GuiLoadIcons(
     loadIconsName: bool,
 ) [*][*:0]u8 {
     return @as([*][*:0]u8, @ptrCast(
-        raylib.mGuiLoadIcons(
+        raygui.mGuiLoadIcons(
             @as([*c]const u8, @ptrFromInt(@intFromPtr(fileName))),
             loadIconsName,
         ),
@@ -239,7 +239,7 @@ pub fn GuiWindowBox(
     bounds: Rectangle,
     title: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiWindowBox(
+    return raygui.mGuiWindowBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(title))),
     );
@@ -250,7 +250,7 @@ pub fn GuiGroupBox(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiGroupBox(
+    return raygui.mGuiGroupBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -261,7 +261,7 @@ pub fn GuiLine(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiLine(
+    return raygui.mGuiLine(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -272,7 +272,7 @@ pub fn GuiPanel(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiPanel(
+    return raygui.mGuiPanel(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -285,7 +285,7 @@ pub fn GuiTabBar(
     count: i32,
     active: *i32,
 ) i32 {
-    return raylib.mGuiTabBar(
+    return raygui.mGuiTabBar(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const [*:0]const u8, @ptrFromInt(@intFromPtr(text))),
         count,
@@ -301,7 +301,7 @@ pub fn GuiScrollPanel(
     scroll: *Vector2,
     view: *Rectangle,
 ) i32 {
-    return raylib.mGuiScrollPanel(
+    return raygui.mGuiScrollPanel(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&content))),
@@ -315,7 +315,7 @@ pub fn GuiLabel(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiLabel(
+    return raygui.mGuiLabel(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -326,7 +326,7 @@ pub fn GuiButton(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiButton(
+    return raygui.mGuiButton(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -337,7 +337,7 @@ pub fn GuiLabelButton(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiLabelButton(
+    return raygui.mGuiLabelButton(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -349,7 +349,7 @@ pub fn GuiToggle(
     text: [*:0]const u8,
     active: *bool,
 ) i32 {
-    return raylib.mGuiToggle(
+    return raygui.mGuiToggle(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]bool, @ptrCast(active)),
@@ -362,7 +362,7 @@ pub fn GuiToggleGroup(
     text: [*:0]const u8,
     active: *i32,
 ) i32 {
-    return raylib.mGuiToggleGroup(
+    return raygui.mGuiToggleGroup(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(active)),
@@ -375,7 +375,7 @@ pub fn GuiToggleSlider(
     text: [*:0]const u8,
     active: *i32,
 ) i32 {
-    return raylib.mGuiToggleSlider(
+    return raygui.mGuiToggleSlider(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(active)),
@@ -388,7 +388,7 @@ pub fn GuiCheckBox(
     text: [*:0]const u8,
     checked: *bool,
 ) i32 {
-    return raylib.mGuiCheckBox(
+    return raygui.mGuiCheckBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]bool, @ptrCast(checked)),
@@ -401,7 +401,7 @@ pub fn GuiComboBox(
     text: [*:0]const u8,
     active: *i32,
 ) i32 {
-    return raylib.mGuiComboBox(
+    return raygui.mGuiComboBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(active)),
@@ -415,7 +415,7 @@ pub fn GuiDropdownBox(
     active: *i32,
     editMode: bool,
 ) i32 {
-    return raylib.mGuiDropdownBox(
+    return raygui.mGuiDropdownBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(active)),
@@ -432,7 +432,7 @@ pub fn GuiSpinner(
     maxValue: i32,
     editMode: bool,
 ) i32 {
-    return raylib.mGuiSpinner(
+    return raygui.mGuiSpinner(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(value)),
@@ -451,7 +451,7 @@ pub fn GuiValueBox(
     maxValue: i32,
     editMode: bool,
 ) i32 {
-    return raylib.mGuiValueBox(
+    return raygui.mGuiValueBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(value)),
@@ -468,7 +468,7 @@ pub fn GuiTextBox(
     textSize: i32,
     editMode: bool,
 ) i32 {
-    return raylib.mGuiTextBox(
+    return raygui.mGuiTextBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]u8, @ptrCast(text)),
         textSize,
@@ -485,7 +485,7 @@ pub fn GuiSlider(
     minValue: f32,
     maxValue: f32,
 ) i32 {
-    return raylib.mGuiSlider(
+    return raygui.mGuiSlider(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textLeft))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textRight))),
@@ -504,7 +504,7 @@ pub fn GuiSliderBar(
     minValue: f32,
     maxValue: f32,
 ) i32 {
-    return raylib.mGuiSliderBar(
+    return raygui.mGuiSliderBar(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textLeft))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textRight))),
@@ -523,7 +523,7 @@ pub fn GuiProgressBar(
     minValue: f32,
     maxValue: f32,
 ) i32 {
-    return raylib.mGuiProgressBar(
+    return raygui.mGuiProgressBar(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textLeft))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(textRight))),
@@ -538,7 +538,7 @@ pub fn GuiStatusBar(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiStatusBar(
+    return raygui.mGuiStatusBar(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -549,7 +549,7 @@ pub fn GuiDummyRec(
     bounds: Rectangle,
     text: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiDummyRec(
+    return raygui.mGuiDummyRec(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
     );
@@ -563,7 +563,7 @@ pub fn GuiGrid(
     subdivs: i32,
     mouseCell: *Vector2,
 ) i32 {
-    return raylib.mGuiGrid(
+    return raygui.mGuiGrid(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         spacing,
@@ -579,7 +579,7 @@ pub fn GuiListView(
     scrollIndex: *i32,
     active: *i32,
 ) i32 {
-    return raylib.mGuiListView(
+    return raygui.mGuiListView(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]i32, @ptrCast(scrollIndex)),
@@ -596,7 +596,7 @@ pub fn GuiListViewEx(
     active: *i32,
     focus: *i32,
 ) i32 {
-    return raylib.mGuiListViewEx(
+    return raygui.mGuiListViewEx(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const [*:0]const u8, @ptrFromInt(@intFromPtr(text))),
         count,
@@ -613,7 +613,7 @@ pub fn GuiMessageBox(
     message: [*:0]const u8,
     buttons: [*:0]const u8,
 ) i32 {
-    return raylib.mGuiMessageBox(
+    return raygui.mGuiMessageBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(title))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(message))),
@@ -631,7 +631,7 @@ pub fn GuiTextInputBox(
     textMaxSize: i32,
     secretViewActive: *bool,
 ) i32 {
-    return raylib.mGuiTextInputBox(
+    return raygui.mGuiTextInputBox(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(title))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(message))),
@@ -648,7 +648,7 @@ pub fn GuiColorPicker(
     text: [*:0]const u8,
     color: *Color,
 ) i32 {
-    return raylib.mGuiColorPicker(
+    return raygui.mGuiColorPicker(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]raygui.Color, @ptrFromInt(@intFromPtr(color))),
@@ -661,7 +661,7 @@ pub fn GuiColorPanel(
     text: [*:0]const u8,
     color: *Color,
 ) i32 {
-    return raylib.mGuiColorPanel(
+    return raygui.mGuiColorPanel(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]raygui.Color, @ptrFromInt(@intFromPtr(color))),
@@ -674,7 +674,7 @@ pub fn GuiColorBarAlpha(
     text: [*:0]const u8,
     alpha: *f32,
 ) i32 {
-    return raylib.mGuiColorBarAlpha(
+    return raygui.mGuiColorBarAlpha(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]f32, @ptrCast(alpha)),
@@ -687,7 +687,7 @@ pub fn GuiColorBarHue(
     text: [*:0]const u8,
     value: *f32,
 ) i32 {
-    return raylib.mGuiColorBarHue(
+    return raygui.mGuiColorBarHue(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]f32, @ptrCast(value)),
@@ -700,7 +700,7 @@ pub fn GuiColorPickerHSV(
     text: [*:0]const u8,
     colorHsv: *Vector3,
 ) i32 {
-    return raylib.mGuiColorPickerHSV(
+    return raygui.mGuiColorPickerHSV(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]raygui.Vector3, @ptrFromInt(@intFromPtr(colorHsv))),
@@ -713,7 +713,7 @@ pub fn GuiColorPanelHSV(
     text: [*:0]const u8,
     colorHsv: *Vector3,
 ) i32 {
-    return raylib.mGuiColorPanelHSV(
+    return raygui.mGuiColorPanelHSV(
         @as([*c]raygui.Rectangle, @ptrFromInt(@intFromPtr(&bounds))),
         @as([*c]const u8, @ptrFromInt(@intFromPtr(text))),
         @as([*c]raygui.Vector3, @ptrFromInt(@intFromPtr(colorHsv))),
